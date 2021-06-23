@@ -18,13 +18,20 @@ public class Solution {
         numsList.add(case1);
         numsList.add(case2);
 
-        for(int i=0; i<numsList.size(); i++) {
-            System.out.println(Arrays.deepToString(numsList.get(i)));
+        for (int[][] ints : numsList) {
+            int result = new Solution().solution(ints[0], ints[1]);
+            System.out.println("Result => " + result);
         }
     }
 
     public int solution(int[] a, int[] b) {
-        int answer = 1234567890;
+        int answer = 0;
+        int len = a.length;
+
+        for(int i=0; i<len; i++) {
+            answer += (a[i] * b[i]);
+        }
+
         return answer;
     }
 }
