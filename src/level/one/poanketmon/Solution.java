@@ -29,8 +29,14 @@ public class Solution {
 
         for (int[] nums : numsList) {
             System.out.println("\t\t\t === Solution Start ===");
+
+            long start = System.currentTimeMillis();
+
             int result = new Solution().solution(nums);
             System.out.println("result => " + result);
+
+            long end = System.currentTimeMillis();
+            System.out.println("수행 시간 : " + (end - start)/1000.0);
         }
     }
 

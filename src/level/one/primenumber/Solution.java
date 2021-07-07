@@ -1,15 +1,31 @@
 package level.one.primenumber;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @소수_만들기 https://programmers.co.kr/learn/courses/30/lessons/12977
  */
 public class Solution {
 
-    final static int[] nums1 = {1, 2, 3, 4};
-    final static int[] nums2 = {1, 2, 7, 6, 4};
+    final static int[] case1 = {1, 2, 3, 4};
+    final static int[] case2 = {1, 2, 7, 6, 4};
 
     public static void main(String[] args) {
-        System.out.println(solution(nums1));
+        List<int[]> numsList = new ArrayList<>();
+        numsList.add(case1);
+        numsList.add(case2);
+
+        for (int[] nums : numsList) {
+            System.out.println("\t\t\t === Solution Start ===");
+            long start = System.currentTimeMillis();
+
+            int result = new Solution().solution(nums);
+            System.out.println("result => " + result);
+
+            long end = System.currentTimeMillis();
+            System.out.println("수행 시간 : " + (end - start)/1000.0);
+        }
     }
 
     // 1(0),2(1),3(2) = 6
@@ -29,7 +45,7 @@ public class Solution {
     // 2(1),6(3),4(4) = 12
 
     // 7(2),6(3),4(4) = 17
-    public static int solution(int[] nums) {
+    public int solution(int[] nums) {
         int answer = 0;
         int maxIdx = nums.length - 1;
 
