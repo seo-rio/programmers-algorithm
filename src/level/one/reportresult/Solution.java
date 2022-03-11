@@ -12,9 +12,7 @@ import java.util.stream.Collectors;
  */
 public class Solution {
 
-//    static final String[] id_list = {"con", "ryan"};
     static final String[] id_list = {"muzi", "frodo", "apeach", "neo"};
-//    static final String[] report = {"ryan con", "ryan con", "ryan con", "ryan con"};
     static final String[] report = {"muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi"};
     static final int k = 2;
 
@@ -59,7 +57,7 @@ public class Solution {
             }
         });
 
-        // TODO: 신고한 사람 중에 정지된 사람이 몇명이나 있는지 확인하여야함
+        // 신고한 사람 중에 정지된 사람이 몇명이나 있는지 확인하여야함
         AtomicInteger index = new AtomicInteger();
         reporterMap.forEach((key, value) -> {
             AtomicInteger count = new AtomicInteger();
