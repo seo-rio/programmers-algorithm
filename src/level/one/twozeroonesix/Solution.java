@@ -18,6 +18,16 @@ public class Solution {
         LocalDate time = LocalDate.of(2016,a, b);
         answer = time.getDayOfWeek().toString().substring(0,3);
 
+        Long before = System.currentTimeMillis();
+        for(int i=0; i<10000000; i++) {
+            System.out.println(i);
+        }
+        Long after = System.currentTimeMillis();
+
+        long diff = (after - before) / 1000;
+
+        System.out.println("Run time :" + diff);
+
         return answer;
     }
 }
